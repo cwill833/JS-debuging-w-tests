@@ -280,18 +280,38 @@ function getGameWinner(){
                 }
             }
         }
-        else if(playerOneMoveOneType === 'paper'){
-            if(playerTwoMoveOneType === 'paper'){
+        else if(playerOneMoveTwoType === 'paper'){
+            if(playerTwoMoveTwoType === 'scissors'){
                 player2++
             }
-            else if(playerTwoMoveOneType === 'scissors'){
+            else if(playerTwoMoveTwoType === 'rock'){
                 player1++
             }
-            else if(playerTwoMoveOneType === 'rock'){
-                if (playerOneMoveOneValue > playerTwoMoveOneValue){
+            else if(playerTwoMoveTwoType === 'paper'){
+                if (playerOneMoveTwoValue > playerTwoMoveTwoValue){
                     player1++
                 }
-                else if(playerOneMoveOneValue < playerTwoMoveOneValue){
+                else if(playerOneMoveTwoValue < playerTwoMoveTwoValue){
+                    player2++
+                }
+                else {
+                    player1++
+                    player2++
+                }
+            }
+        }
+        else if(playerOneMoveThreeType === 'scissors'){
+            if(playerTwoMoveThreeType === 'paper'){
+                player1++
+            }
+            else if(playerTwoMoveThreeType === 'rock'){
+                player2++
+            }
+            else if(playerTwoMoveThreeType === 'scissors'){
+                if (playerOneMoveThreeValue > playerTwoMoveThreeValue){
+                    player1++
+                }
+                else if(playerOneMoveThreeValue < playerTwoMoveThreeValue){
                     player2++
                 }
                 else {
@@ -303,6 +323,16 @@ function getGameWinner(){
     }
     else {
         return null
+    }
+
+    if(player1 > player2){
+        return "Player One"
+    } 
+    else if(player1 < player2){
+        return "Player Two"
+    }
+    else {
+        return "Tie"
     }
 
 }
