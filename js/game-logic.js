@@ -243,14 +243,67 @@ function getRoundWinner(int){
     }
 }
 
-
-
-
-
-
-
-
 function getGameWinner(){
+    let player1, player2;
+
+    if(
+        playerOneMoveOneType != undefined &&
+        playerOneMoveOneValue != undefined &&
+        playerOneMoveTwoType != undefined &&
+        playerOneMoveTwoValue != undefined &&
+        playerOneMoveThreeType != undefined &&
+        playerOneMoveThreeValue != undefined &&
+        playerTwoMoveOneType != undefined &&
+        playerTwoMoveOneValue != undefined &&
+        playerTwoMoveTwoType != undefined &&
+        playerTwoMoveTwoValue != undefined &&
+        playerTwoMoveThreeType != undefined &&
+        playerTwoMoveThreeValue != undefined 
+    ){
+        if(playerOneMoveOneType === 'rock'){
+            if(playerTwoMoveOneType === 'paper'){
+                player2++
+            }
+            else if(playerTwoMoveOneType === 'scissors'){
+                player1++
+            }
+            else if(playerTwoMoveOneType === 'rock'){
+                if (playerOneMoveOneValue > playerTwoMoveOneValue){
+                    player1++
+                }
+                else if(playerOneMoveOneValue < playerTwoMoveOneValue){
+                    player2++
+                }
+                else {
+                    player1++
+                    player2++
+                }
+            }
+        }
+        else if(playerOneMoveOneType === 'paper'){
+            if(playerTwoMoveOneType === 'paper'){
+                player2++
+            }
+            else if(playerTwoMoveOneType === 'scissors'){
+                player1++
+            }
+            else if(playerTwoMoveOneType === 'rock'){
+                if (playerOneMoveOneValue > playerTwoMoveOneValue){
+                    player1++
+                }
+                else if(playerOneMoveOneValue < playerTwoMoveOneValue){
+                    player2++
+                }
+                else {
+                    player1++
+                    player2++
+                }
+            }
+        }
+    }
+    else {
+        return null
+    }
 
 }
 
