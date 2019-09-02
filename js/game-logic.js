@@ -223,7 +223,8 @@ function getRoundWinner(int){
 }
 
 function getGameWinner(){
-    let player1, player2;
+    let player1 = 0
+    let player2 = 0
 
     if(
         playerOneMoveOneType != undefined &&
@@ -425,18 +426,12 @@ function getGameWinner(){
     }
 
     if(player1 > player2){
-        console.log(player1)
-    console.log(player2)
         return "Player One"
     } 
     else if(player1 < player2){
-        console.log(player1)
-    console.log(player2)
         return "Player Two"
     }
     else {
-        console.log(player1)
-    console.log(player2)
         return "Tie"
     }
 
