@@ -439,11 +439,22 @@ function getGameWinner(){
 
 function setComputerMoves(){
     let type = ['rock', 'paper', 'scissors']
-    let value = []
+    let value = 0
 
     playerTwoMoveOneType = type[Math.floor(Math.random() * 3)]
     playerTwoMoveTwoType = type[Math.floor(Math.random() * 3)]
     playerTwoMoveThreeType = type[Math.floor(Math.random() * 3)]
 
-    
+    do{
+        value = 99
+        playerTwoMoveOneValue = Math.floor(Math.random() * value + 1)
+        if(playerTwoMoveOneValue === 0) playerTwoMoveOneValue = 1
+        value -= playerTwoMoveOneValue
+        playerTwoMoveTwoValue = Math.floor(Math.random() * value + 1)
+        if(playerTwoMoveTwoValue === 0) playerTwoMoveTwoValue = 1
+        value -= playerTwoMoveTwoValue
+        playerTwoMoveThreeValue = value
+        if(playerTwoMoveThreeValue === 0) playerTwoMoveThreeValue = 1
+    } while(playerTwoMoveOneValue + playerTwoMoveTwoValue + playerTwoMoveThreeValue > 99 )
+
 }
